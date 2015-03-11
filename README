@@ -1,3 +1,7 @@
+
+before use these scripts one need to export this line:
+export LD_LIBRARY_PATH=<path_to_scripts_folder>/libs:$LD_LIBRARY_PATH
+
 [produceAllHits.py]
 Example of usage:
 	./produceAllHits.py <pattern> -c <channel> [OPTIONAL] -p <pos/neg> -a <amplificationFactor>

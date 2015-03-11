@@ -11,8 +11,8 @@
 #include "TF1.h"
 #include "TKey.h"
 #include "TCanvas.h"
-#include "/home/oviazlo/PhD_study/Learning/Anthony_and_Dominick_code_new/SFrameDev/LucidTools/include/FadcEvent.h"
-#include "/home/oviazlo/PhD_study/Learning/Anthony_and_Dominick_code_new/SFrameDev/LucidTools/include/serviceFunctions.h"
+#include "FadcEvent.h"
+#include "serviceFunctions.h"
 #include "TRandom3.h"
 #include <iostream>
 #include <algorithm>    // std::sort
