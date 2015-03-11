@@ -1,0 +1,27 @@
+[produceAllHits.py]
+Example of usage:
+	./produceAllHits.py <pattern> -c <channel> [OPTIONAL] -p <pos/neg> -a <amplificationFactor>
+	./produceAllHists.py LEDBoardSignalTrigger_PMTandPINdiode_temperatureTest_EA3391_HV760_20p5_*root  -c 2 -p neg -a 10.0
+
+[fitAllHist.py]
+
+[plot.exe] - plotting routing. works only with one input file.
+Can plot:
+	- y vs. x
+	- scaled y vs. x
+	- y/z vs. x
+
+[plotOnSameCan.exe] - plot few distributions on one canvas. 
+	- all input txt-files should be produced by DumpGraph() function
+	- to make Lucid testing plot:
+		./plotOnSameCan.exe -l LISTS/homogenity_lucidC_test1_vs_test2.txt -y 0-150 --xLabels <dummyNumber>
+
+[plotRatio.exe] - make ratio plot
+	- format of list file: <num_file> <den_file> <legend>
+	- if only one of two flags --x1 nd --x2 specified -> use it for x-axis from num.file(x1) or den.file(x2), othervise, --x1 from numerator file will be used
+	- example: ./plotRatio.exe -l LISTS/sep3_chargeRatio_HV750.txt --x1 0 --x2 0 --y1 1 --y2 1 -r 0 -r 1 -r 2 -r 3 -r 4
+
+[temperaturePlotFinal.exe]
+	- example: 
+		./temperaturePlotFinal.exe -t ../temperature_test/Oct31_Nov1/toUse.txt -i histPicts/pmtTempTest_Nov1_final.txt --startingTime Oct31_15:55:12 -w 5500-10500 --timeShift -110
+		./temperaturePlotFinal.exe -t ../temperature_test/Feb2015_all/slowTempRise_21.5_29.3_Feb16_04\:33\:05_Feb17_20\:46\:36.txt -i charge_Feb16_Feb17.txt --startingTime Feb16_04:33:05 --timeShift -110 --timeScale 30
