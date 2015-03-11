@@ -1,0 +1,6 @@
+ToDo when you add new library:
+1) make soft link of .so file to folder libs/
+2) make link of all headers to libs/include/:
+	ls <libFolderName>/include/ | awk '{print "ln -s ../<libFolderName>/include/"$1" include/"$1}' | sh
+
+to make a new class - use EmptyExample folder as starting point (copy and rename this folder to new lib name)

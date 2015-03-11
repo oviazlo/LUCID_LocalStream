@@ -1,0 +1,6 @@
+Empty Example of lib which should be used as Template
+
+ToDo steps while creating new lib:
+1) if lib consist any definitions of classes one need to add proper line to LinkDef.h file
+2) specify lib name as LIB_NAME in Makefile
+3) make steps described in main libs/ folder

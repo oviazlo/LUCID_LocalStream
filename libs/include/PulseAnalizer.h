@@ -1,0 +1,1 @@
+../PulseAnalizer/include/PulseAnalizer.h
