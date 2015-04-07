@@ -16,14 +16,15 @@
 #include <Rtypes.h>
 #include <TFile.h>
 #include <TKey.h>
+#include <TROOT.h>
+#include <TClass.h>
 #include <dirent.h> 
 #include <stdio.h> 
 #include <TH1F.h> 
 #include <TF1.h> 
 #include <TGraphErrors.h> 
+#include <glob.h>
 
-/// BOOST libs:
-// #include <boost/filesystem.hpp>
 
 using namespace std;
 
@@ -94,5 +95,12 @@ void DumpGraph(string outFileName, TGraphErrors* inGraph, string headerLine = ""
 /// get environment variable
 string GetEnv( const string & var );
 void GetEnv (string & inString, const string & var);
+
+/// return list of files which match input pattern
+std::vector<std::string> glob(const std::string& pat);
+
+TGraphErrors* GetTGraphErrors(int nPoints, vector<double> x, vector<double> y, vector<double> ex, vector<double> ey);
+
+vector<TH1*> GetAllHistInFile (string inFile);
 
 #endif

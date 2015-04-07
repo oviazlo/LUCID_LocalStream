@@ -15,5 +15,6 @@
 
 #pragma link C++ class lucrodRead+;
 #pragma link C++ class lucrodTree+;
+#pragma link C++ class lucrodAnalysis+;
 
 #endif // __CINT__

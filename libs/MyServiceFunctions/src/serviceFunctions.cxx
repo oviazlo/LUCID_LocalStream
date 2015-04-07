@@ -308,3 +308,45 @@ void GetEnv (string & inString, const string & var){
   }
   
 }
+
+std::vector<std::string> glob(const std::string& pat){
+    using namespace std;
+    glob_t glob_result;
+    glob(pat.c_str(),GLOB_TILDE,NULL,&glob_result);
+    vector<string> ret;
+    for(unsigned int i=0;i<glob_result.gl_pathc;++i){
+        ret.push_back(string(glob_result.gl_pathv[i]));
+    }
+    globfree(&glob_result);
+    return ret;
+}
+
+
+TGraphErrors* GetTGraphErrors(int nPoints, vector<double> x, vector<double> y, vector<double> ex, vector<double> ey){
+
+	double* xA = &x[0];
+	double* yA = &y[0];
+	double* exA = &ex[0];
+	double* eyA = &ey[0];
+	
+	return new TGraphErrors(nPoints,xA,yA,exA,eyA);
+	
+}
+
+
+vector<TH1*> GetAllHistInFile (string inFile){
+
+	vector<TH1*> outVec;
+	
+	TFile *f1 = TFile::Open(inFile.c_str());
+	TIter next(f1->GetListOfKeys());
+	TKey *key;
+	while ((key = (TKey*)next())) { 
+		TClass *cl = gROOT->GetClass(key->GetClassName());
+		if (!cl->InheritsFrom("TH1")) continue;
+		TH1 *h = (TH1*)key->ReadObj();
+		outVec.push_back(h);
+	}
+	
+	return outVec;
+}

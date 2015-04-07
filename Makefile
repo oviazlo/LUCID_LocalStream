@@ -5,7 +5,7 @@
 
 ROOT_FLAGS := `root-config --cflags --libs`
 CFLAGS := -O3 -I/usr/include/root/ -lstdc++ -std=c++11 -g -Wall -Ilibs/include/
-LIBS := -Llibs -lFadcEvent -lMyServiceFunctions -lBoostServiceFunctions -lPulseAnalizer -lboost_program_options -lboost_system -lboost_filesystem -fopenmp
+LIBS := -Llibs -lFadcEvent -lMyServiceFunctions -lBoostServiceFunctions -lPulseAnalizer -lboost_program_options -lboost_system -lboost_filesystem -fopenmp -lLucrodRead -lTubeNaming
 CC := g++
 
 CXX_FILES := $(wildcard src/*.cxx)
